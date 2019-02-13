@@ -11,7 +11,7 @@
 
 #import "SRRunLoopThread.h"
 
-@interface SRRunLoopThread ()
+@interface ChivoxSRRunLoopThread ()
 {
     dispatch_group_t _waitGroup;
 }
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation SRRunLoopThread
+@implementation ChivoxSRRunLoopThread
 
 + (instancetype)sharedThread
 {

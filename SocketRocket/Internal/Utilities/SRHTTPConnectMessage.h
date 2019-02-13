@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define SRHTTPConnectMessageCreate(...) ChivoxSRHTTPConnectMessageCreate(__VA_ARGS__)
+
 NS_ASSUME_NONNULL_BEGIN
 
 extern CFHTTPMessageRef SRHTTPConnectMessageCreate(NSURLRequest *request,

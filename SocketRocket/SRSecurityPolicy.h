@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SRSecurityPolicy : NSObject
+@interface ChivoxSRSecurityPolicy : NSObject
 
 /**
  A default `SRSecurityPolicy` implementation specifies socket security and
@@ -68,5 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain;
 
 @end
+
+typedef ChivoxSRSecurityPolicy SRSecurityPolicy;
 
 NS_ASSUME_NONNULL_END

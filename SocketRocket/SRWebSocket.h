@@ -44,8 +44,12 @@ typedef NS_ENUM(NSInteger, SRStatusCode) {
     // 4000-4999: Available for use by applications.
 };
 
-@class SRWebSocket;
-@class SRSecurityPolicy;
+@class ChivoxSRWebSocket;
+@class ChivoxSRSecurityPolicy;
+typedef ChivoxSRSecurityPolicy SRSecurityPolicy;
+
+#define SRWebSocketErrorDomain ChivoxSRWebSocketErrorDomain
+#define SRHTTPResponseErrorKey ChivoxSRHTTPResponseErrorKey
 
 /**
  Error domain used for errors reported by SRWebSocket.
@@ -66,7 +70,7 @@ extern NSString *const SRHTTPResponseErrorKey;
 /**
  A `SRWebSocket` object lets you connect, send and receive data to a remote Web Socket.
  */
-@interface SRWebSocket : NSObject <NSStreamDelegate>
+@interface ChivoxSRWebSocket : NSObject <NSStreamDelegate>
 
 /**
  The delegate of the web socket.
@@ -219,7 +223,7 @@ extern NSString *const SRHTTPResponseErrorKey;
 
 /**
  Schedules a received on a given run loop in a given mode.
- By default, a web socket will schedule itself on `+[NSRunLoop SR_networkRunLoop]` using `NSDefaultRunLoopMode`.
+ By default, a web socket will schedule itself on `+[NSRunLoop ChivoxSR_networkRunLoop]` using `NSDefaultRunLoopMode`.
 
  @param runLoop The run loop on which to schedule the receiver.
  @param mode     The mode for the run loop.
@@ -319,6 +323,9 @@ extern NSString *const SRHTTPResponseErrorKey;
 - (BOOL)sendPing:(nullable NSData *)data error:(NSError **)error NS_SWIFT_NAME(sendPing(_:));
 
 @end
+
+
+typedef ChivoxSRWebSocket SRWebSocket;
 
 ///--------------------------------------
 #pragma mark - SRWebSocketDelegate

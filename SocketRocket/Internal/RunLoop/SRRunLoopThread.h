@@ -13,12 +13,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SRRunLoopThread : NSThread
+@interface ChivoxSRRunLoopThread : NSThread
 
 @property (nonatomic, strong, readonly) NSRunLoop *runLoop;
 
 + (instancetype)sharedThread;
 
 @end
+
+typedef ChivoxSRRunLoopThread SRRunLoopThread;
 
 NS_ASSUME_NONNULL_END

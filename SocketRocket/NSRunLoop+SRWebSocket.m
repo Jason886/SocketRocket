@@ -17,9 +17,9 @@
 // Required for object file to always be linked.
 void import_NSRunLoop_SRWebSocket() { }
 
-@implementation NSRunLoop (SRWebSocket)
+@implementation NSRunLoop (ChivoxSRWebSocket)
 
-+ (NSRunLoop *)SR_networkRunLoop
++ (NSRunLoop *)ChivoxSR_networkRunLoop
 {
     return [SRRunLoopThread sharedThread].runLoop;
 }

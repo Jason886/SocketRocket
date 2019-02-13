@@ -11,7 +11,7 @@
 
 #import "SRIOConsumerPool.h"
 
-@implementation SRIOConsumerPool {
+@implementation ChivoxSRIOConsumerPool {
     NSUInteger _poolSize;
     NSMutableArray<SRIOConsumer *> *_bufferedConsumers;
 }

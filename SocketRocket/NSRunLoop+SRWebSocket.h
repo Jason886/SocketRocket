@@ -13,14 +13,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSRunLoop (SRWebSocket)
+@interface NSRunLoop (ChivoxSRWebSocket)
 
 /**
  Default run loop that will be used to schedule all instances of `SRWebSocket`.
 
  @return An instance of `NSRunLoop`.
  */
-+ (NSRunLoop *)SR_networkRunLoop;
++ (NSRunLoop *)ChivoxSR_networkRunLoop;
 
 @end
 

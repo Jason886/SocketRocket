@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define SRMaskBytesSIMD(...) ChivoxSRMaskBytesSIMD(__VA_ARGS__)
+
 /**
  Unmask bytes using XOR via SIMD.
 

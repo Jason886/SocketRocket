@@ -12,13 +12,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SRSecurityPolicy ()
+@interface ChivoxSRSecurityPolicy ()
 
 @property (nonatomic, assign, readonly) BOOL certificateChainValidationEnabled;
 
 @end
 
-@implementation SRSecurityPolicy
+@implementation ChivoxSRSecurityPolicy
 
 + (instancetype)defaultPolicy
 {

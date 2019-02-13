@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define SRDefaultBufferSize(...) ChivoxSRDefaultBufferSize(__VA_ARGS__)
+
 typedef NS_ENUM(NSInteger, SROpCode)
 {
     SROpCodeTextFrame = 0x1,

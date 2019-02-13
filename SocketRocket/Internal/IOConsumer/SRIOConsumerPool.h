@@ -14,7 +14,7 @@
 #import "SRIOConsumer.h" // TODO: (nlutsenko) Convert to @class and constants file for block types
 
 // This class is not thread-safe, and is expected to always be run on the same queue.
-@interface SRIOConsumerPool : NSObject
+@interface ChivoxSRIOConsumerPool : NSObject
 
 - (instancetype)initWithBufferCapacity:(NSUInteger)poolSize;
 
@@ -26,3 +26,5 @@
 - (void)returnConsumer:(SRIOConsumer *)consumer;
 
 @end
+
+typedef ChivoxSRIOConsumerPool SRIOConsumerPool;

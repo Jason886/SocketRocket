@@ -9,5 +9,7 @@
 
 #import <SocketRocket/NSURLRequest+SRWebSocket.h>
 
+#define import_NSURLRequest_SRWebSocket(...) Chivoximport_NSURLRequest_SRWebSocket(__VA_ARGS__)
+
 // Empty function that force links the object file for the category.
 extern void import_NSURLRequest_SRWebSocket(void);

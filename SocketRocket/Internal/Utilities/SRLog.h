@@ -9,6 +9,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define SRDebugLog(...) ChivoxSRDebugLog(__VA_ARGS__)
+#define SRErrorLog(...) ChivoxSRErrorLog(__VA_ARGS__)
+
 NS_ASSUME_NONNULL_BEGIN
 
 // Uncomment this line to enable debug logging

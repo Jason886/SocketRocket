@@ -13,23 +13,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSURLRequest (SRWebSocket)
+@interface NSURLRequest (ChivoxSRWebSocket)
 
 /**
  An array of pinned `SecCertificateRef` SSL certificates that `SRWebSocket` will use for validation.
  */
-@property (nullable, nonatomic, copy, readonly) NSArray *SR_SSLPinnedCertificates
+@property (nullable, nonatomic, copy, readonly) NSArray *ChivoxSR_SSLPinnedCertificates
     DEPRECATED_MSG_ATTRIBUTE("Using pinned certificates is neither secure nor supported in SocketRocket, "
                              "and leads to security issues. Please use a proper, trust chain validated certificate.");
 
 @end
 
-@interface NSMutableURLRequest (SRWebSocket)
+@interface NSMutableURLRequest (ChivoxSRWebSocket)
 
 /**
  An array of pinned `SecCertificateRef` SSL certificates that `SRWebSocket` will use for validation.
  */
-@property (nullable, nonatomic, copy) NSArray *SR_SSLPinnedCertificates
+@property (nullable, nonatomic, copy) NSArray *ChivoxSR_SSLPinnedCertificates
     DEPRECATED_MSG_ATTRIBUTE("Using pinned certificates is neither secure nor supported in SocketRocket, "
                              "and leads to security issues. Please use a proper, trust chain validated certificate.");
 

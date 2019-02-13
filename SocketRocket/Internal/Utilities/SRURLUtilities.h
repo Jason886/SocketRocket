@@ -9,6 +9,11 @@
 
 #import <Foundation/Foundation.h>
 
+#define SRBasicAuthorizationHeaderFromURL(...) ChivoxSRBasicAuthorizationHeaderFromURL(__VA_ARGS__)
+#define SRStreamNetworkServiceTypeFromURLRequest(...) ChivoxSRStreamNetworkServiceTypeFromURLRequest(__VA_ARGS__)
+#define SRURLOrigin(...) ChivoxSRURLOrigin(__VA_ARGS__)
+#define SRURLRequiresSSL(...) ChivoxSRURLRequiresSSL(__VA_ARGS__)
+
 NS_ASSUME_NONNULL_BEGIN
 
 // The origin isn't really applicable for a native application.

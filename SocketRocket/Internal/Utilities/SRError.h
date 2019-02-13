@@ -9,6 +9,11 @@
 
 #import <Foundation/Foundation.h>
 
+#define SRErrorWithDomainCodeDescription(...) ChivoxSRErrorWithDomainCodeDescription(__VA_ARGS__)
+#define SRErrorWithCodeDescription(...) ChivoxSRErrorWithCodeDescription(__VA_ARGS__)
+#define SRErrorWithCodeDescriptionUnderlyingError(...) ChivoxSRErrorWithCodeDescriptionUnderlyingError(__VA_ARGS__)
+#define SRHTTPErrorWithCodeDescription(...) ChivoxSRHTTPErrorWithCodeDescription(__VA_ARGS__)
+
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSError *SRErrorWithDomainCodeDescription(NSString *domain, NSInteger code, NSString *description);

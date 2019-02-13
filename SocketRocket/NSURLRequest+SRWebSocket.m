@@ -19,18 +19,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 static NSString *const SRSSLPinnnedCertificatesKey = @"SocketRocket_SSLPinnedCertificates";
 
-@implementation NSURLRequest (SRWebSocket)
+@implementation NSURLRequest (ChivoxSRWebSocket)
 
-- (nullable NSArray *)SR_SSLPinnedCertificates
+- (nullable NSArray *)ChivoxSR_SSLPinnedCertificates
 {
     return nil;
 }
 
 @end
 
-@implementation NSMutableURLRequest (SRWebSocket)
+@implementation NSMutableURLRequest (ChivoxSRWebSocket)
 
-- (void)setSR_SSLPinnedCertificates:(nullable NSArray *)SR_SSLPinnedCertificates
+- (void)setChivoxSR_SSLPinnedCertificates:(nullable NSArray *)ChivoxSR_SSLPinnedCertificates
 {
     [NSException raise:NSInvalidArgumentException
                 format:@"Using pinned certificates is neither secure nor supported in SocketRocket, "

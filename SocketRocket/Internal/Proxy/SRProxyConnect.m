@@ -15,7 +15,7 @@
 #import "SRLog.h"
 #import "SRURLUtilities.h"
 
-@interface SRProxyConnect() <NSStreamDelegate>
+@interface ChivoxSRProxyConnect() <NSStreamDelegate>
 
 @property (nonatomic, strong) NSURL *url;
 @property (nonatomic, strong) NSInputStream *inputStream;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation SRProxyConnect
+@implementation ChivoxSRProxyConnect
 {
     SRProxyConnectCompletion _completion;
 
@@ -65,7 +65,7 @@
 {
     // If we get deallocated before the socket open finishes - we need to cleanup everything.
 
-    [self.inputStream removeFromRunLoop:[NSRunLoop SR_networkRunLoop] forMode:NSDefaultRunLoopMode];
+    [self.inputStream removeFromRunLoop:[NSRunLoop ChivoxSR_networkRunLoop] forMode:NSDefaultRunLoopMode];
     self.inputStream.delegate = nil;
     [self.inputStream close];
     self.inputStream = nil;
@@ -110,7 +110,7 @@
     self.inputStream = nil;
     self.outputStream = nil;
 
-    [inputStream removeFromRunLoop:[NSRunLoop SR_networkRunLoop] forMode:NSDefaultRunLoopMode];
+    [inputStream removeFromRunLoop:[NSRunLoop ChivoxSR_networkRunLoop] forMode:NSDefaultRunLoopMode];
     inputStream.delegate = nil;
     outputStream.delegate = nil;
 
@@ -132,7 +132,7 @@
     self.inputStream.delegate = nil;
     self.outputStream.delegate = nil;
 
-    [self.inputStream removeFromRunLoop:[NSRunLoop SR_networkRunLoop]
+    [self.inputStream removeFromRunLoop:[NSRunLoop ChivoxSR_networkRunLoop]
                                 forMode:NSDefaultRunLoopMode];
     [self.inputStream close];
     [self.outputStream close];
@@ -284,9 +284,9 @@
 {
     [self _initializeStreams];
 
-    [self.inputStream scheduleInRunLoop:[NSRunLoop SR_networkRunLoop]
+    [self.inputStream scheduleInRunLoop:[NSRunLoop ChivoxSR_networkRunLoop]
                                 forMode:NSDefaultRunLoopMode];
-    //[self.outputStream scheduleInRunLoop:[NSRunLoop SR_networkRunLoop]
+    //[self.outputStream scheduleInRunLoop:[NSRunLoop ChivoxSR_networkRunLoop]
     //                           forMode:NSDefaultRunLoopMode];
     [self.outputStream open];
     [self.inputStream open];

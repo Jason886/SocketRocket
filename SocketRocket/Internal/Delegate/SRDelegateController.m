@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SRDelegateController ()
+@interface ChivoxSRDelegateController ()
 
 @property (nonatomic, strong, readonly) dispatch_queue_t accessQueue;
 
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@implementation SRDelegateController
+@implementation ChivoxSRDelegateController
 
 @synthesize delegate = _delegate;
 @synthesize dispatchQueue = _dispatchQueue;

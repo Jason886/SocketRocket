@@ -47,7 +47,7 @@ typedef struct SRDelegateAvailableMethods SRDelegateAvailableMethods;
 
 typedef void(^SRDelegateBlock)(id<SRWebSocketDelegate> _Nullable delegate, SRDelegateAvailableMethods availableMethods);
 
-@interface SRDelegateController : NSObject
+@interface ChivoxSRDelegateController : NSObject
 
 @property (nonatomic, weak) id<SRWebSocketDelegate> delegate;
 @property (atomic, readonly) SRDelegateAvailableMethods availableDelegateMethods;
@@ -63,5 +63,7 @@ typedef void(^SRDelegateBlock)(id<SRWebSocketDelegate> _Nullable delegate, SRDel
 - (void)performDelegateQueueBlock:(dispatch_block_t)block;
 
 @end
+
+typedef ChivoxSRDelegateController SRDelegateController;
 
 NS_ASSUME_NONNULL_END

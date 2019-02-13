@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define SRRandomData(...) ChivoxSRRandomData(__VA_ARGS__)
+
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSData *SRRandomData(NSUInteger length);

@@ -69,7 +69,7 @@ static uint8_t const SRWebSocketProtocolVersion = 13;
 NSString *const SRWebSocketErrorDomain = @"SRWebSocketErrorDomain";
 NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
 
-@interface SRWebSocket ()  <NSStreamDelegate>
+@interface ChivoxSRWebSocket ()  <NSStreamDelegate>
 
 @property (atomic, assign, readwrite) SRReadyState readyState;
 
@@ -83,7 +83,7 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
 
 @end
 
-@implementation SRWebSocket {
+@implementation ChivoxSRWebSocket {
     SRMutex _kvoLock;
     OSSpinLock _propertyLock;
 
@@ -348,7 +348,7 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
         [self _updateSecureStreamOptions];
 
         if (!_scheduledRunloops.count) {
-            [self scheduleInRunLoop:[NSRunLoop SR_networkRunLoop] forMode:NSDefaultRunLoopMode];
+            [self scheduleInRunLoop:[NSRunLoop ChivoxSR_networkRunLoop] forMode:NSDefaultRunLoopMode];
         }
 
         // If we don't require SSL validation - consider that we connected.
@@ -1141,7 +1141,7 @@ static const uint8_t SRPayloadLenMask   = 0x7F;
         // Cleanup NSStream delegate's in the same RunLoop used by the streams themselves:
         // This way we'll prevent race conditions between handleEvent and SRWebsocket's dealloc
         NSTimer *timer = [NSTimer timerWithTimeInterval:(0.0f) target:self selector:@selector(_cleanupSelfReference:) userInfo:nil repeats:NO];
-        [[NSRunLoop SR_networkRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop ChivoxSR_networkRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     }
 }
 

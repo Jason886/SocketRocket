@@ -9,6 +9,11 @@
 
 #import <Foundation/Foundation.h>
 
+#define SRMutexDestroy(...) ChivoxSRMutexDestroy(__VA_ARGS__)
+#define SRMutexInitRecursive(...) ChivoxSRMutexInitRecursive(__VA_ARGS__)
+#define SRMutexLock(...) ChivoxSRMutexLock(__VA_ARGS__)
+#define SRMutexUnlock(...) ChivoxSRMutexUnlock(__VA_ARGS__)
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef __attribute__((capability("mutex"))) pthread_mutex_t *SRMutex;

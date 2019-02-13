@@ -11,14 +11,15 @@
 
 #import <Foundation/Foundation.h>
 
-@class SRWebSocket; // TODO: (nlutsenko) Remove dependency on SRWebSocket here.
+@class ChivoxSRWebSocket; // TODO: (nlutsenko) Remove dependency on SRWebSocket here.
+typedef ChivoxSRWebSocket SRWebSocket;
 
 // Returns number of bytes consumed. Returning 0 means you didn't match.
 // Sends bytes to callback handler;
 typedef size_t (^stream_scanner)(NSData *collected_data);
 typedef void (^data_callback)(SRWebSocket *webSocket,  NSData *data);
 
-@interface SRIOConsumer : NSObject {
+@interface ChivoxSRIOConsumer : NSObject {
     stream_scanner _scanner;
     data_callback _handler;
     size_t _bytesNeeded;
@@ -38,3 +39,5 @@ typedef void (^data_callback)(SRWebSocket *webSocket,  NSData *data);
              unmaskBytes:(BOOL)unmaskBytes;
 
 @end
+
+typedef ChivoxSRIOConsumer SRIOConsumer;

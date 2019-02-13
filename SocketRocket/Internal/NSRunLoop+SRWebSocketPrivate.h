@@ -9,5 +9,7 @@
 
 #import <SocketRocket/NSRunLoop+SRWebSocket.h>
 
+#define import_NSRunLoop_SRWebSocket(...) Chivoximport_NSRunLoop_SRWebSocket(__VA_ARGS__)
+
 // Empty function that force links the object file for the category.
 extern void import_NSRunLoop_SRWebSocket(void);

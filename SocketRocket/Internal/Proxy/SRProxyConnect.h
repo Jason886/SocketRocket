@@ -15,12 +15,14 @@ typedef void(^SRProxyConnectCompletion)(NSError *_Nullable error,
                                         NSInputStream *_Nullable readStream,
                                         NSOutputStream *_Nullable writeStream);
 
-@interface SRProxyConnect : NSObject
+@interface ChivoxSRProxyConnect : NSObject
 
 - (instancetype)initWithURL:(NSURL *)url;
 
 - (void)openNetworkStreamWithCompletion:(SRProxyConnectCompletion)completion;
 
 @end
+
+typedef ChivoxSRProxyConnect SRProxyConnect;
 
 NS_ASSUME_NONNULL_END

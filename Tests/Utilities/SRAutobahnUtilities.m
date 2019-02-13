@@ -27,7 +27,8 @@ NSString *SRAutobahnTestAgentName(void)
 
 NSURL *SRAutobahnTestServerURL(void)
 {
-    return [NSURL URLWithString:@"ws://localhost:9001"];
+    //return [NSURL URLWithString:@"ws://localhost:9001"];
+    return [NSURL URLWithString:@"ws://cloud.chivox.com/ws"];
 }
 
 ///--------------------------------------

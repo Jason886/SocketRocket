@@ -11,7 +11,7 @@
 
 #import "SRIOConsumer.h"
 
-@implementation SRIOConsumer
+@implementation ChivoxSRIOConsumer
 
 @synthesize bytesNeeded = _bytesNeeded;
 @synthesize consumer = _scanner;
