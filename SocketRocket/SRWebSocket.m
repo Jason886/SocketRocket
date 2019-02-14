@@ -842,6 +842,7 @@ static inline BOOL closeCodeIsValid(int closeCode) {
                         });
                         return;
                     }
+                    if (!string) string = @"";
                     /* add end */
 
                     if (availableMethods.didReceiveMessage) {
