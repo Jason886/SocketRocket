@@ -630,6 +630,25 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
     return [self sendDataNoCopy:data error:error];
 }
 
+// add by xianchen.peng 2019-02-14
+- (BOOL)sendDataInTextFrame:(nullable NSData *)data error:(NSError **)error NS_SWIFT_NAME(send(dataastext:)) {
+    data = [data copy];
+    
+    if (self.readyState != SR_OPEN) {
+        NSString *message = @"Invalid State: Cannot call `sendDataInTextFrame:error:` until connection is open.";
+        if (error) {
+            *error = SRErrorWithCodeDescription(2134, message);
+        }
+        SRDebugLog(message);
+        return NO;
+    }
+    
+    dispatch_async(_workQueue, ^{
+        [self _sendFrameWithOpcode:SROpCodeTextFrame data:data];
+    });
+    return YES;
+}
+
 - (BOOL)sendDataNoCopy:(nullable NSData *)data error:(NSError **)error
 {
     if (self.readyState != SR_OPEN) {
@@ -793,6 +812,7 @@ static inline BOOL closeCodeIsValid(int closeCode) {
 
     switch (opcode) {
         case SROpCodeTextFrame: {
+            /* remove by xianchen.peng, 2019-02-14
             NSString *string = [[NSString alloc] initWithData:frameData encoding:NSUTF8StringEncoding];
             if (!string && frameData) {
                 [self closeWithCode:SRStatusCodeInvalidUTF8 reason:@"Text frames must be valid UTF-8."];
@@ -801,6 +821,7 @@ static inline BOOL closeCodeIsValid(int closeCode) {
                 });
                 return;
             }
+             */
             SRDebugLog(@"Received text message.");
             [self.delegateController performDelegateBlock:^(id<SRWebSocketDelegate>  _Nullable delegate, SRDelegateAvailableMethods availableMethods) {
                 // Don't convert into string - iff `delegate` tells us not to. Otherwise - create UTF8 string and handle that.
@@ -812,6 +833,17 @@ static inline BOOL closeCodeIsValid(int closeCode) {
                         [delegate webSocket:self didReceiveMessageWithData:frameData];
                     }
                 } else {
+                    /* add by xianchen.peng 2019-01-18 */
+                    NSString *string = [[NSString alloc] initWithData:frameData encoding:NSUTF8StringEncoding];
+                    if (!string && frameData) {
+                        [self closeWithCode:SRStatusCodeInvalidUTF8 reason:@"Text frames must be valid UTF-8."];
+                        dispatch_async(self->_workQueue, ^{
+                            [self closeConnection];
+                        });
+                        return;
+                    }
+                    /* add end */
+
                     if (availableMethods.didReceiveMessage) {
                         [delegate webSocket:self didReceiveMessage:string];
                     }
@@ -1276,8 +1308,14 @@ static const char CRLFCRLFBytes[] = {'\r', '\n', '\r', '\n'};
 
                     size_t scanSize = currentDataSize - _currentStringScanPosition;
 
+                    /* remove by xianchen.peng, 2019-02-14
                     NSData *scan_data = [_currentFrameData subdataWithRange:NSMakeRange(_currentStringScanPosition, scanSize)];
                     int32_t valid_utf8_size = validate_dispatch_data_partial_string(scan_data);
+                     */
+                    /* add by xianchen.peng 2019-02-14 */
+                    int32_t valid_utf8_size = (int32_t)scanSize;
+                    /* add end */
+
 
                     if (valid_utf8_size == -1) {
                         [self closeWithCode:SRStatusCodeInvalidUTF8 reason:@"Text frames must be valid UTF-8"];

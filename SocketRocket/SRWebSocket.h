@@ -298,6 +298,11 @@ extern NSString *const SRHTTPResponseErrorKey;
  */
 - (BOOL)sendData:(nullable NSData *)data error:(NSError **)error NS_SWIFT_NAME(send(data:));
 
+/*
+ * add by xianchen.peng, 2019-02-14
+ */
+- (BOOL)sendDataInTextFrame:(nullable NSData *)data error:(NSError **)error NS_SWIFT_NAME(send(dataInTextFrame:));
+
 /**
  Send binary data to the server, without making a defensive copy of it first.
 
