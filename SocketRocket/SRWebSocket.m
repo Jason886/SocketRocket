@@ -62,7 +62,7 @@ typedef struct {
 
 static NSString *const SRWebSocketAppendToSecKeyString = @"258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
 
-static inline int32_t validate_dispatch_data_partial_string(NSData *data);
+//static inline int32_t validate_dispatch_data_partial_string(NSData *data);
 
 static uint8_t const SRWebSocketProtocolVersion = 13;
 
@@ -631,7 +631,7 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
 }
 
 // add by xianchen.peng 2019-02-14
-- (BOOL)sendDataInTextFrame:(nullable NSData *)data error:(NSError **)error NS_SWIFT_NAME(send(dataastext:)) {
+- (BOOL)sendDataInTextFrame:(nullable NSData *)data error:(NSError **)error {
     data = [data copy];
     
     if (self.readyState != SR_OPEN) {
@@ -1600,7 +1600,7 @@ static const size_t SRFrameHeaderOverhead = 32;
 @end
 
 #ifdef HAS_ICU
-
+#if 0
 static inline int32_t validate_dispatch_data_partial_string(NSData *data) {
     if ([data length] > INT32_MAX) {
         // INT32_MAX is the limit so long as this Framework is using 32 bit ints everywhere.
@@ -1647,9 +1647,11 @@ static inline int32_t validate_dispatch_data_partial_string(NSData *data) {
 
     return size;
 }
+#endif
 
 #else
 
+#if 0
 // This is a hack, and probably not optimal
 static inline int32_t validate_dispatch_data_partial_string(NSData *data) {
     static const int maxCodepointSize = 3;
@@ -1663,5 +1665,6 @@ static inline int32_t validate_dispatch_data_partial_string(NSData *data) {
 
     return -1;
 }
+#endif
 
 #endif
