@@ -7,7 +7,7 @@
 // of patent rights can be found in the PATENTS file in the same directory.
 //
 
-#import <SocketRocket/NSURLRequest+SRWebSocket.h>
+#import "NSURLRequest+SRWebSocket.h"
 
 #define import_NSURLRequest_SRWebSocket(...) Chivoximport_NSURLRequest_SRWebSocket(__VA_ARGS__)
 

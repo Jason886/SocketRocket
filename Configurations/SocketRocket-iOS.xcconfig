@@ -10,8 +10,8 @@
 #include "Shared/Platform/iOS.xcconfig"
 #include "Shared/Product/StaticFramework.xcconfig"
 
-PRODUCT_NAME = SocketRocket
-PRODUCT_BUNDLE_IDENTIFIER = com.facebook.socketrocket.ios
+PRODUCT_NAME = ChivoxSocketRocket
+PRODUCT_BUNDLE_IDENTIFIER = com.facebook.socketrocket.ios.chivox
 IPHONEOS_DEPLOYMENT_TARGET = 6.0
 
 INFOPLIST_FILE = $(SRCROOT)/SocketRocket/Resources/Info.plist

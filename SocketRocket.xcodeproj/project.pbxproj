@@ -180,10 +180,10 @@
 		81D647861D2CA78800690609 /* SRMutex.h in Headers */ = {isa = PBXBuildFile; fileRef = 817491A61D1C8C33006E09DF /* SRMutex.h */; };
 		81D647871D2CA78800690609 /* SRError.h in Headers */ = {isa = PBXBuildFile; fileRef = 81B22EC31CE42D7E0073C636 /* SRError.h */; };
 		81D647881D2CA78800690609 /* SRRunLoopThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 81B31C5D1CDC444900D86D43 /* SRRunLoopThread.h */; };
-		81D647B51D2CA8E200690609 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D6478D1D2CA78800690609 /* SocketRocket.framework */; };
+		81D647B51D2CA8E200690609 /* ChivoxSocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D6478D1D2CA78800690609 /* ChivoxSocketRocket.framework */; };
 		81DCD1241D2D9235002501A2 /* libicucore.A.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C68D0D1D2CBFA800A1D005 /* libicucore.A.tbd */; };
-		81E8A6A21D4C41E000916C7E /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D6478D1D2CA78800690609 /* SocketRocket.framework */; };
-		81E8A6A31D4C41E000916C7E /* SocketRocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81D6478D1D2CA78800690609 /* SocketRocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		81E8A6A21D4C41E000916C7E /* ChivoxSocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D6478D1D2CA78800690609 /* ChivoxSocketRocket.framework */; };
+		81E8A6A31D4C41E000916C7E /* ChivoxSocketRocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81D6478D1D2CA78800690609 /* ChivoxSocketRocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5391CBE1D2F4B4700606A81 /* SRSIMDHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = F5391CBC1D2F4B4700606A81 /* SRSIMDHelpers.h */; };
 		F5391CBF1D2F4B4700606A81 /* SRSIMDHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = F5391CBC1D2F4B4700606A81 /* SRSIMDHelpers.h */; };
 		F5391CC01D2F4B4700606A81 /* SRSIMDHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = F5391CBC1D2F4B4700606A81 /* SRSIMDHelpers.h */; };
@@ -241,7 +241,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				81E8A6A31D4C41E000916C7E /* SocketRocket.framework in Embed Frameworks */,
+				81E8A6A31D4C41E000916C7E /* ChivoxSocketRocket.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,8 +249,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2D4227621BB4358C000C1A6C /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3345DC901C52ACD70083CCB8 /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D4227621BB4358C000C1A6C /* ChivoxSocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChivoxSocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3345DC901C52ACD70083CCB8 /* ChivoxSocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChivoxSocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		454A02D41D0FAD010060DFB2 /* SRSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRSecurityPolicy.h; path = SocketRocket/SRSecurityPolicy.h; sourceTree = SOURCE_ROOT; };
 		454FEA791D2570D400073768 /* SRPinningSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPinningSecurityPolicy.h; sourceTree = "<group>"; };
 		454FEA7A1D2570D400073768 /* SRPinningSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRPinningSecurityPolicy.m; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 		81D6475B1D2CA6A100690609 /* SocketRocket-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SocketRocket-macOS.xcconfig"; sourceTree = "<group>"; };
 		81D6475C1D2CA6A100690609 /* SocketRocket-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SocketRocket-tvOS.xcconfig"; sourceTree = "<group>"; };
 		81D6475D1D2CA6A100690609 /* SocketRocketTests-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SocketRocketTests-iOS.xcconfig"; sourceTree = "<group>"; };
-		81D6478D1D2CA78800690609 /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81D6478D1D2CA78800690609 /* ChivoxSocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChivoxSocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E8A69A1D4C417A00916C7E /* TestChat-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "TestChat-iOS.xcconfig"; sourceTree = "<group>"; };
 		F5391CBC1D2F4B4700606A81 /* SRSIMDHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSIMDHelpers.h; sourceTree = "<group>"; };
 		F5391CBD1D2F4B4700606A81 /* SRSIMDHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSIMDHelpers.m; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 		F62417FA14D52F3C003CE997 /* TCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCViewController.m; sourceTree = "<group>"; };
 		F62417FF14D5300C003CE997 /* TCChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCChatCell.h; sourceTree = "<group>"; };
 		F624180014D5300C003CE997 /* TCChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCChatCell.m; sourceTree = "<group>"; };
-		F668C880153E91210044DBAC /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F668C880153E91210044DBAC /* ChivoxSocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChivoxSocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A12CCF145119B700C1D980 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
 		F6A12CD0145119B700C1D980 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 		F6A12CD3145122FC00C1D980 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -388,7 +388,7 @@
 				F62417E714D52F3C003CE997 /* Foundation.framework in Frameworks */,
 				F624180314D53449003CE997 /* CFNetwork.framework in Frameworks */,
 				F624180414D53449003CE997 /* Security.framework in Frameworks */,
-				81E8A6A21D4C41E000916C7E /* SocketRocket.framework in Frameworks */,
+				81E8A6A21D4C41E000916C7E /* ChivoxSocketRocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +406,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81D647B51D2CA8E200690609 /* SocketRocket.framework in Frameworks */,
+				81D647B51D2CA8E200690609 /* ChivoxSocketRocket.framework in Frameworks */,
 				F6BDA806145900D200FE3253 /* Foundation.framework in Frameworks */,
 				F6AE45241459071C0022AF3C /* CFNetwork.framework in Frameworks */,
 				F6016C8814620EC70037BB3D /* Security.framework in Frameworks */,
@@ -683,10 +683,10 @@
 			children = (
 				F6BDA802145900D200FE3253 /* SocketRocketTests-iOS.xctest */,
 				F62417E314D52F3C003CE997 /* TestChat.app */,
-				F668C880153E91210044DBAC /* SocketRocket.framework */,
-				2D4227621BB4358C000C1A6C /* SocketRocket.framework */,
-				3345DC901C52ACD70083CCB8 /* SocketRocket.framework */,
-				81D6478D1D2CA78800690609 /* SocketRocket.framework */,
+				F668C880153E91210044DBAC /* ChivoxSocketRocket.framework */,
+				2D4227621BB4358C000C1A6C /* ChivoxSocketRocket.framework */,
+				3345DC901C52ACD70083CCB8 /* ChivoxSocketRocket.framework */,
+				81D6478D1D2CA78800690609 /* ChivoxSocketRocket.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -858,7 +858,7 @@
 			);
 			name = "SocketRocket-iOS-Dynamic";
 			productName = "SocketRocket-iOS";
-			productReference = 2D4227621BB4358C000C1A6C /* SocketRocket.framework */;
+			productReference = 2D4227621BB4358C000C1A6C /* ChivoxSocketRocket.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		3345DC821C52ACD70083CCB8 /* SocketRocket-tvOS */ = {
@@ -875,7 +875,7 @@
 			);
 			name = "SocketRocket-tvOS";
 			productName = "SocketRocket-iOS";
-			productReference = 3345DC901C52ACD70083CCB8 /* SocketRocket.framework */;
+			productReference = 3345DC901C52ACD70083CCB8 /* ChivoxSocketRocket.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		81D6475F1D2CA78800690609 /* SocketRocket-iOS */ = {
@@ -892,7 +892,7 @@
 			);
 			name = "SocketRocket-iOS";
 			productName = "SocketRocket-iOS";
-			productReference = 81D6478D1D2CA78800690609 /* SocketRocket.framework */;
+			productReference = 81D6478D1D2CA78800690609 /* ChivoxSocketRocket.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F62417E214D52F3C003CE997 /* TestChat */ = {
@@ -929,7 +929,7 @@
 			);
 			name = "SocketRocket-macOS";
 			productName = SocketRocketOSX;
-			productReference = F668C880153E91210044DBAC /* SocketRocket.framework */;
+			productReference = F668C880153E91210044DBAC /* ChivoxSocketRocket.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F6BDA801145900D200FE3253 /* SocketRocketTests-iOS */ = {

@@ -10,7 +10,7 @@
 #include "Shared/Platform/tvOS.xcconfig"
 #include "Shared/Product/DynamicFramework.xcconfig"
 
-PRODUCT_NAME = SocketRocket
-PRODUCT_BUNDLE_IDENTIFIER = com.facebook.socketrocket.tvos
+PRODUCT_NAME = ChivoxSocketRocket
+PRODUCT_BUNDLE_IDENTIFIER = com.facebook.socketrocket.tvos.chivox
 
 INFOPLIST_FILE = $(SRCROOT)/SocketRocket/Resources/Info.plist

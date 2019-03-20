@@ -10,8 +10,8 @@
 #include "Shared/Platform/macOS.xcconfig"
 #include "Shared/Product/DynamicFramework.xcconfig"
 
-PRODUCT_NAME = SocketRocket
-PRODUCT_BUNDLE_IDENTIFIER = com.facebook.socketrocket.macos
+PRODUCT_NAME = ChivoxSocketRocket
+PRODUCT_BUNDLE_IDENTIFIER = com.facebook.socketrocket.macos.chivox
 MACOSX_DEPLOYMENT_TARGET = 10.8
 
 INFOPLIST_FILE = $(SRCROOT)/SocketRocket/Resources/Info.plist
