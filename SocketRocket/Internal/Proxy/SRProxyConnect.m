@@ -14,6 +14,9 @@
 #import "SRError.h"
 #import "SRLog.h"
 #import "SRURLUtilities.h"
+#import <sys/socket.h>
+#import <arpa/inet.h>
+#import <netinet/tcp.h>
 
 @interface ChivoxSRProxyConnect() <NSStreamDelegate>
 
@@ -341,6 +344,34 @@
     switch (eventCode) {
         case NSStreamEventOpenCompleted: {
             if (aStream == self.inputStream) {
+                
+                CFDataRef socketData = CFReadStreamCopyProperty((__bridge CFReadStreamRef)(self.inputStream), kCFStreamPropertySocketNativeHandle);
+                CFSocketNativeHandle socket;
+                CFDataGetBytes(socketData, CFRangeMake(0, sizeof(CFSocketNativeHandle)), (UInt8 *)&socket);
+                CFRelease(socketData);
+                
+                int keepAlive = 1;
+                int idleTime = 5;
+                int intvlTime = 10;
+                int cntCount = 1;
+                int nodelay = 1;
+                if (setsockopt(socket, SOL_SOCKET, SO_KEEPALIVE, &keepAlive, sizeof(keepAlive)) < 0) {
+                    NSLog(@"setsockopt SO_KEEPALIVE failed: %s", strerror(errno));
+                }
+                if (setsockopt(socket, IPPROTO_TCP, TCP_KEEPALIVE, &idleTime, sizeof(idleTime)) < 0) {
+                    NSLog(@"setsockopt TCP_KEEPALIVE failed: %s", strerror(errno));
+                }
+                if (setsockopt(socket, IPPROTO_TCP, TCP_KEEPINTVL, &intvlTime, sizeof(intvlTime)) < 0) {
+                    NSLog(@"setsockopt TCP_KEEPINTVL failed: %s", strerror(errno));
+                }
+                if (setsockopt(socket, IPPROTO_TCP, TCP_KEEPCNT, &cntCount, sizeof(cntCount)) < 0) {
+                    NSLog(@"setsockopt TCP_KEEPCNT failed: %s", strerror(errno));
+                }
+                if (setsockopt(socket, IPPROTO_TCP, TCP_NODELAY, &nodelay, sizeof(nodelay)) == -1)
+                {
+                    NSLog(@"setsockopt TCP_NODELAY failed: %s", strerror(errno));
+                }
+                
                 if (_httpProxyHost) {
                     [self _proxyDidConnect];
                 } else {
