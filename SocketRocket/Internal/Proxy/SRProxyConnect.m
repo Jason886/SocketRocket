@@ -352,8 +352,8 @@
                 
                 int keepAlive = 1;
                 int idleTime = 5;
-                int intvlTime = 2;
-                int cntCount = 3;
+                int intvlTime = 1;
+                int cntCount = 6;
                 int nodelay = 1;
                 if (setsockopt(socket, SOL_SOCKET, SO_KEEPALIVE, &keepAlive, sizeof(keepAlive)) < 0) {
                     NSLog(@"setsockopt SO_KEEPALIVE failed: %s", strerror(errno));
