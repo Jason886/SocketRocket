@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "81D6475F1D2CA78800690609"
-               BuildableName = "SocketRocket.framework"
+               BuildableName = "ChivoxSocketRocket.framework"
                BlueprintName = "SocketRocket-iOS"
                ReferencedContainer = "container:SocketRocket.xcodeproj">
             </BuildableReference>
@@ -93,7 +93,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81D6475F1D2CA78800690609"
-            BuildableName = "SocketRocket.framework"
+            BuildableName = "ChivoxSocketRocket.framework"
             BlueprintName = "SocketRocket-iOS"
             ReferencedContainer = "container:SocketRocket.xcodeproj">
          </BuildableReference>
@@ -115,7 +115,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81D6475F1D2CA78800690609"
-            BuildableName = "SocketRocket.framework"
+            BuildableName = "ChivoxSocketRocket.framework"
             BlueprintName = "SocketRocket-iOS"
             ReferencedContainer = "container:SocketRocket.xcodeproj">
          </BuildableReference>
@@ -133,7 +133,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81D6475F1D2CA78800690609"
-            BuildableName = "SocketRocket.framework"
+            BuildableName = "ChivoxSocketRocket.framework"
             BlueprintName = "SocketRocket-iOS"
             ReferencedContainer = "container:SocketRocket.xcodeproj">
          </BuildableReference>
